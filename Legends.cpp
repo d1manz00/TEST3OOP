@@ -1,6 +1,6 @@
 #ifndef LEGENDS_CPP
 #define LEGENDS_CPP
-#include "legends.h"
+#include "Legends.h"
 legends::legends(string name, int scare, int telepathy)
 {
     this->name = name;
@@ -15,8 +15,8 @@ legends::legends ()
 }
 ostream & operator << (ostream & os, const legends ob)
 {
-    os << "Scare = " << ob.scare <<endl;
     os << "Name = " << ob.name <<endl;
+    os << "Scare = " << ob.scare <<endl;
     os << "telepathy = " << ob.telepathy <<endl;
 }
 istream & operator >> (istream & is, legends ob)
@@ -25,4 +25,7 @@ istream & operator >> (istream & is, legends ob)
     is >> ob.name;
     is >> ob.telepathy;
 }
+
+legends::~legends() = default;
+
 #endif

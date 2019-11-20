@@ -1,6 +1,6 @@
 #ifndef DRAGONS_H
 #define DRAGONS_H
-#include "legends.h"
+#include "Legends.h"
 #include <iostream>
 using namespace std;
 class dragons : public legends
@@ -14,4 +14,7 @@ class dragons : public legends
     friend ostream & operator << (ostream & os, const dragons ob) {os<<(legends)ob; os << "MaxHight = " << ob.maxHight <<endl;}
     friend istream & operator >> (istream & is, dragons ob) {is >> (legends)ob; is >> ob.maxHight;}
 };
+
+dragons::~dragons() = default;
+
 #endif
