@@ -12,8 +12,9 @@ protected:
     string name;
     int scare;
     int telepathy;
+    int Health;
 public:
-    legends(string name, int scare, int telepathy);
+    legends(string name, int scare, int telepathy, int health);
     legends();
     ~legends();
     friend ostream & operator << (ostream & os, const legends ob);

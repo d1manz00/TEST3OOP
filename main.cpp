@@ -9,4 +9,7 @@ int main()
     dragons draco();
     salamandres salamandr();
     ucorn ucorn();
+    cout << draco;
+    legends legend;
+    cout << legend;
 }

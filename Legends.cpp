@@ -1,29 +1,46 @@
 #ifndef LEGENDS_CPP
 #define LEGENDS_CPP
+
 #include "Legends.h"
-legends::legends(string name, int scare, int telepathy)
+
+legends::legends(string name, int scare, int telepathy, int Health)
 {
-    this->name = name;
-    this->scare = scare;
-    this->telepathy = telepathy;
+    if (((scare >= 0)&&(telepathy >= 0))||((scare <= 10)&&(telepathy <=10 )))
+    {
+        this->name = name;
+        this->scare = scare;
+        this->telepathy = telepathy;
+        this->Health = Health;
+    }
+    else
+    {
+        cout << "False parameters. Close apps." <<endl;
+        return;
+    }
+
 }
 legends::legends ()
 {
     name = "NO_NAME";
     scare = 0;
     telepathy = 0;
+    Health = 1;
 }
 ostream & operator << (ostream & os, const legends ob)
 {
     os << "Name = " << ob.name <<endl;
     os << "Scare = " << ob.scare <<endl;
     os << "telepathy = " << ob.telepathy <<endl;
+    os << "Health = " << ob.Health <<endl;
+    return os;
 }
 istream & operator >> (istream & is, legends ob)
 {
     is >> ob.scare;
     is >> ob.name;
     is >> ob.telepathy;
+    is >> ob.Health;
+    return is;
 }
 
 legends::~legends() = default;
