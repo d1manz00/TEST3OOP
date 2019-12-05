@@ -14,10 +14,11 @@ protected:
     int telepathy;
     int Health;
 public:
+    void showDefault ();
     legends(string name, int scare, int telepathy, int health);
     legends();
     ~legends();
-    friend ostream & operator << (ostream & os, const legends ob);
-    friend istream & operator >> (istream & is, legends ob);
+   /* friend ostream & operator << (ostream & os, const legends ob);
+    friend istream & operator >> (istream & is, legends ob);*/
 };
 #endif
